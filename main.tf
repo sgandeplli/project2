@@ -1,5 +1,4 @@
 provider "google" {
-  credentials = file(var.credential_file)
   project     = var.project_id
   region      = "us-central1"
 }
@@ -33,13 +32,8 @@ resource "google_compute_instance" "centos_vm" {
 }
 
 variable "project_id" {
-  description = "GCP project ID"
+  description = "primal-gear-436812-t0"
 }
-
-variable "credential_file" {
-  description = "Path to GCP credentials JSON"
-}
-
 output "vm_ip" {
   value = google_compute_instance.centos_vm.network_interface.0.access_config.0.nat_ip
 }
