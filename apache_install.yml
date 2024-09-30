@@ -12,3 +12,12 @@
         name: httpd
         state: started
         enabled: yes
+
+    - name: Allow HTTP service through firewall
+      firewalld:
+        service: http
+        permanent: yes
+        state: enabled
+
+    - name: Reload firewall
+      command: firewall-cmd --reload
