@@ -27,7 +27,7 @@ resource "google_compute_instance" "centos_vm" {
   tags = ["http-server"]
 
   provisioner "local-exec" {
-    command = "echo ${self.network_interface.0.access_config.0.nat_ip} > ansible/inventory"  # Updated path
+    command = "mkdir -p ansible && echo ${self.network_interface.0.access_config.0.nat_ip} > ansible/inventory"
   }
 }
 
