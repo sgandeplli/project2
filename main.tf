@@ -7,13 +7,11 @@ resource "google_compute_instance" "centos_vm" {
   name         = "centos-vm"
   machine_type = "e2-medium"
   zone         = "us-central1-a"
-
   boot_disk {
     initialize_params {
-      image = "centos-cloud/centos-9"
+      image = "centos-cloud/centos-9"  # Correct image family
     }
   }
-
   network_interface {
     network = "default"
     access_config {
