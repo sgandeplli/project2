@@ -1,5 +1,5 @@
 provider "google" {
-  project     = var.project_id
+  project     = "primal-gear-436812-t0"
   region      = "us-central1"
 }
 
@@ -29,10 +29,6 @@ resource "google_compute_instance" "centos_vm" {
   provisioner "local-exec" {
     command = "echo ${self.network_interface.0.access_config.0.nat_ip} > ../ansible/inventory"
   }
-}
-
-variable "project_id" {
-  description = "primal-gear-436812-t0"
 }
 output "vm_ip" {
   value = google_compute_instance.centos_vm.network_interface.0.access_config.0.nat_ip
