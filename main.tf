@@ -21,7 +21,7 @@ resource "google_compute_instance" "centos_vm" {
   }
 
   metadata = {
-    ssh-keys = "centos:${file("/home/username/.ssh/id_rsa.pub")}"  # Update this path to your public key
+    ssh-keys = "centos:${file("/root/.ssh/id_rsa.pub")}"  # Update this path to your public key
   }
   
   tags = ["http-server"]
