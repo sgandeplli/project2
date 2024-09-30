@@ -9,7 +9,7 @@ resource "google_compute_instance" "centos_vm" {
   zone         = "us-central1-a"
   boot_disk {
     initialize_params {
-      image = "centos-cloud/centos-9"  # Correct image family
+      image = "centos-cloud/centos-stream-9"  # Correct image family
     }
   }
   network_interface {
