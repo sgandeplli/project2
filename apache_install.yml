@@ -14,10 +14,10 @@
         enabled: yes
 
     - name: Allow HTTP service through firewall
-      firewalld:
-        service: http
-        permanent: yes
+      ansible.builtin.firewall:
         state: enabled
+        permanent: yes
+        service: http
 
     - name: Reload firewall
       command: firewall-cmd --reload
