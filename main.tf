@@ -20,7 +20,7 @@ resource "google_compute_instance" "centos_vm" {
     }
   }
   metadata = {
-    ssh-keys = "centos:${file("/home/username/.ssh/id_rsa.pub")}"
+    ssh-keys = "centos:${file("/root/.ssh/id_rsa.pub")}"
     # Path where the SSH key will be stored inside the VM
     ssh_key_path = "/home/centos/.ssh/authorized_keys"
   }
